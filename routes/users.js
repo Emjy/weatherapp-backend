@@ -6,6 +6,8 @@ const User = require('../models/users');
 const { checkBody } = require('../modules/checkBody');
 
 
+
+
 let fields = ["email", "password"]
 
 router.post('/signup', (req, res) => {
