@@ -12,6 +12,9 @@ var indexRouter = require('./routes/index');
 var weatherRouter = require('./routes/weather');
 var userRouter = require('./routes/users');
 
+var app = express();
+const cors = require('cors');
+
 // Autoriser uniquement les requêtes depuis votre domaine front-end
 const corsOptions = {
     origin: 'https://weatherapp-frontend-sigma-henna.vercel.app',
@@ -19,9 +22,6 @@ const corsOptions = {
     credentials: true,
     optionsSuccessStatus: 204,
 };
-
-var app = express();
-const cors = require('cors');
 
 // Utilisez le middleware cors avec les options spécifiées
 app.use(cors(corsOptions));
