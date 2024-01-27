@@ -22,7 +22,8 @@ const corsOptions = {
 
 var app = express();
 const cors = require('cors');
-app.use(cors());
+
+// Utilisez le middleware cors avec les options spécifiées
 app.use(cors(corsOptions));
 
 app.use(logger('dev'));
