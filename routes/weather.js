@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
 					newCity.save().then(newDoc => {
 						res.json({ result: true, weather: newDoc });
 					});
-				});
+				}).catch((error) => console.log(error));
 		} else {
 			// City already exists in database
 			res.json({ result: false, error: 'City already saved' });
@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
 	City.find().then(data => {
 		res.json({ weather: data });
-	});
+	}).catch((error) => console.log(error));
 });
 
 router.get("/:cityName", (req, res) => {
@@ -52,7 +52,7 @@ router.get("/:cityName", (req, res) => {
     } else {
       res.json({ result: false, error: "City not found" });
     }
-  });
+  }).catch((error) => console.log(error));
 });
 
 router.delete("/:cityName", (req, res) => {
@@ -63,7 +63,7 @@ router.delete("/:cityName", (req, res) => {
       // document successfully deleted
       City.find().then(data => {
         res.json({ result: true, weather: data });
-      });
+	  }).catch((error) => console.log(error));
     } else {
       res.json({ result: false, error: "City not found" });
     }

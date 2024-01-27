@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -14,7 +13,6 @@ var weatherRouter = require('./routes/weather');
 var userRouter = require('./routes/users');
 
 var app = express();
-
 const cors = require('cors');
 app.use(cors());
 
